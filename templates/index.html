@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block main_content %}
+<div class="left-content">
+   {% for article in data %}
+     <article>
+	<h3><a href="{% url 'article' %}?id={{ article.id }}">{{ article.title }}</a></h3>
+    <h6>分类：<a href="/category/{{ article.category.name }}">{{ article.category.name }}</a> &nbsp;&nbsp;&nbsp;&nbsp;
+        用户：{{ article.user.username }}  &nbsp;&nbsp;&nbsp;&nbsp;
+        日期：{{ article.date_publish | date:"Y-m-d H:i" }}
+    </h6>
+         
+	<p>{{ article.desc }}</p>
+		<p class="continue"><a href="{% url 'article' %}?id={{ article.id }}">阅读全文 &raquo;</a></p>
+    </article>
+       <hr />
+    {% endfor %}
+    {% include 'pagination.html' %}
+</div>
+{% endblock %}

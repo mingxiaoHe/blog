@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block main_content %}
+<div class="left-content">
+    <article>
+        <h2>{{ article.title }}</h2>
+        {{ article.content |safe }}
+    </article>
+</div>{% endblock %}

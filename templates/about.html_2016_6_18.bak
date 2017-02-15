@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block main_content %}
+
+<div class="left-content">
+    <article>
+        <h2>About</h2>
+        <p><strong>兰生幽谷，不以无人而不芳</strong></p>
+        <p>An Operations Engineer mainly on Linux|Python|C.</p>
+        <p>非淡泊无以明志，非宁静无以致远。</p>
+        <h2 id="_1">联系我</h2>
+        <ul>
+            <li>邮箱: <a href="mailto:xiaoming.linux@qq.com">xiaoming.linux@qq.com</a></li>
+            <li>GitHub: <a href="https://github.com/mingxiaoHe">xiaoming</a></li>
+            <li>腾讯微博: <a href="http://t.qq.com/xcjj592496">@xiaoming</a></li>
+            <li>WeChat: 微信扫描下面二维码</li>
+        </ul>
+        <p><img src="{% static 'images/WeChat.jpg' %}" width="258" height="258"></p>
+            <hr>
+            <h6>感谢所有爱我，关心我，支持我的人！！谢谢有你们！</h6>
+            <h6 class="love"><p>---------2016年5月21日晚</p></h6>
+    </article>
+    <hr>
+</div>
+{% endblock %}

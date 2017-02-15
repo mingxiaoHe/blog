@@ -1,0 +1,11 @@
+<uwsgi>
+  <socket>0.0.0.0:9000</socket>
+  <listen>20</listen>
+  <master>true</master>
+  <processes>3</processes>
+  <pythonpath>/var/www/blog_xiaoming/blog_xiaoming</pythonpath>
+  <pythonpath>/var/www/blog_xiaoming</pythonpath>
+  <module>wsgi</module>
+  <logdate>true</logdate>
+</uwsgi>
+

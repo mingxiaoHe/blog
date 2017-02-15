@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block main_content %}
+<div class="left-content">
+    <h1>{{ archive_y_m }}文章归档</h1>
+    <dl>
+        {% for item in data %}
+            <dt>{{ item.date_publish | date:"Y-m-d H:i" }}</dt>
+            <dd><a href="{% url 'article' %}?id={{ item.id }}">{{ item.title }}</a></dd>
+        {% endfor %}
+    </dl>
+</div>
+{% endblock %}

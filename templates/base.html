@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mingxiao.info</title>
+    <link rel="stylesheet" href="{% static 'css/customer.css'%}">
+</head>
+<body>
+    <div class="top-bar">
+        <ul>
+            <li><a href="/">mingxiao.info</a></li>
+            <li><a href="/">首页</a></li>
+            <li><a href="/about">关于我</a></li>
+        </ul>
+    </div>
+
+    <div class="main-section ">
+
+        <div class="row">
+                {% block main_content %}{% endblock %}
+
+            <div class="right-content">
+                <div class="panel">
+                    <h5>分 类</h5>
+                    <ul class="side-nav">
+                        {% for category in category_list %}
+                            <li><a href="/category/{{ category.name }}">{{ category.name }}</a></li>
+                        {% endfor %}
+					</ul>
+                </div>
+                <div class="panel">
+                    <h5>标 签</h5>
+                    <ul class="tag-cloud">
+                        {% for tag in tag_list %}
+                            <li><a href='/tag/{{ tag.name }}'>{{ tag.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+				</div>
+                <div class="panel">
+                    <h5>文章存档</h5>
+                    <ul class="side-nav">
+                        {% for archive in archive_list %}
+                                <li><a href='/archive/{{ archive | slice:":4" }}/{{ archive | slice:"5:7" }}'>{{ archive }}</a></li>
+                        {% endfor %}
+                    </ul>
+				</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
